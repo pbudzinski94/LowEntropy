@@ -6,6 +6,7 @@ public class MouseControll : MonoBehaviour
 {
     public Rigidbody2D object1;
     public Rigidbody2D object2;
+    public float force;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,13 +16,13 @@ public class MouseControll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButton(0))
         {
             Vector2 clickedPlace = Camera.main.ScreenPointToRay(Input.mousePosition).origin;
             Vector2 object2Position = object2.transform.position;
             Vector2 object1Position = object1.transform.position;
-            object2.AddForce((clickedPlace - object2Position).normalized * 100);
-            object1.AddForce((clickedPlace - object1Position).normalized * 100);
+            object2.AddForce((clickedPlace - object2Position).normalized * force * Time.deltaTime);
+            object1.AddForce((clickedPlace - object1Position).normalized * force * Time.deltaTime);
         }
     }
 }

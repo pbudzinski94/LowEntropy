@@ -140,6 +140,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!114 &119126751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119126746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdffcbef1cba6ff4cb529b9b7fb11c0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wasTouched: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,6 +273,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
+--- !u!114 &1098919490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098919485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdffcbef1cba6ff4cb529b9b7fb11c0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wasTouched: 0
 --- !u!1 &1309217852
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,7 +295,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1309217853}
-  - component: {fileID: 1309217854}
+  - component: {fileID: 1309217855}
+  - component: {fileID: 1309217856}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -291,7 +318,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1309217854
+--- !u!114 &1309217855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309217852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7829ba0f23ec95946bed0c68c32becb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstLevelController: {fileID: 1309217856}
+--- !u!114 &1309217856
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -303,8 +343,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34675e70bfbab7e4d97b56430444b08e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  object1: {fileID: 119126747}
-  object2: {fileID: 1098919486}
+  object1: {fileID: 1098919486}
+  object2: {fileID: 119126747}
+  force: 500
 --- !u!1001 &1616488210
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -316,6 +357,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Material object
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807887968098467773, guid: 6d834e82ef7ff1446aaf7d84e8992ced,
+        type: 3}
+      propertyPath: m_TagString
+      value: Sun
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807887968098467768, guid: 6d834e82ef7ff1446aaf7d84e8992ced,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807887968098467768, guid: 6d834e82ef7ff1446aaf7d84e8992ced,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2807887968098467775, guid: 6d834e82ef7ff1446aaf7d84e8992ced,
         type: 3}
@@ -382,11 +438,6 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2807887968098467768, guid: 6d834e82ef7ff1446aaf7d84e8992ced,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d834e82ef7ff1446aaf7d84e8992ced, type: 3}
 --- !u!1001 &1758474630
@@ -401,15 +452,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Material object (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2807887968098467768, guid: 6d834e82ef7ff1446aaf7d84e8992ced,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807887968098467768, guid: 6d834e82ef7ff1446aaf7d84e8992ced,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2807887968098467775, guid: 6d834e82ef7ff1446aaf7d84e8992ced,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.97
+      value: -5.05
       objectReference: {fileID: 0}
     - target: {fileID: 2807887968098467775, guid: 6d834e82ef7ff1446aaf7d84e8992ced,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9
+      value: 1.97
       objectReference: {fileID: 0}
     - target: {fileID: 2807887968098467775, guid: 6d834e82ef7ff1446aaf7d84e8992ced,
         type: 3}
@@ -456,6 +517,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2807887968098467775, guid: 6d834e82ef7ff1446aaf7d84e8992ced,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807887968098467775, guid: 6d834e82ef7ff1446aaf7d84e8992ced,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2807887968098467774, guid: 6d834e82ef7ff1446aaf7d84e8992ced,
         type: 3}
       propertyPath: m_Sprite
@@ -475,11 +546,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2807887968098467768, guid: 6d834e82ef7ff1446aaf7d84e8992ced,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d834e82ef7ff1446aaf7d84e8992ced, type: 3}
